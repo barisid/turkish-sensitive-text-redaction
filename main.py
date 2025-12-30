@@ -58,7 +58,7 @@ class Redaction():
                     for currency_match in currency_matches:
                         if len(currency_match) >= 3:
                             output_text = output_text.replace(currency_match, "AMOUNT")
-                else if self.currency_format == "Type2":
+                elif self.currency_format == "Type2":
                     currency_matches = re.findall(r"[0-9]{0,3}\,{0,1}[0-9]{0,3}\,{0,1}[0-9]{0,3}\,{0,1}[0-9]{0,3}.{0,1}[0-9]{0,2}",output_text)
                     for currency_match in currency_matches:
                         if len(currency_match) >= 3:
@@ -94,4 +94,5 @@ try:
     with open(args.output, "w") as file:
         input_text = file.write(output_text)
 except Exception as e:
+
     raise FileExistsError
